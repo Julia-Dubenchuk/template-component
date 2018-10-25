@@ -1,0 +1,24 @@
+{
+  "name": "template-component",
+  "version": "1.0.0",
+  "description": "Шаблоны верстки различных компонентов",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server \"src\" --files \"src\" --open \"external\" --no-notify --no-ghost-mode",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julia-Dubenchuk/template-component.git"
+  },
+  "author": "Yulia Dubenchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julia-Dubenchuk/template-component/issues"
+  },
+  "homepage": "https://github.com/Julia-Dubenchuk/template-component#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "normalize.css": "^8.0.0"
+  }
+}
