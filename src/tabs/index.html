@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    
+        body {
+            padding: 10px;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: 'Bree Serif', serif;
+            font-size: 36px;
+            }
+  
+        p {
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding: 0;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 700px;
+            background: #efefef;
+            box-shadow: 0 48px 80px -32px rgba(0, 0, 0, .3);
+        }
+    
+        .input {
+            position: absolute;
+            opacity: 0;
+        }
+    
+        .label {
+            width: 100%;
+            padding: 20px 30px;
+            background: #e5e5e5;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            color: #7f7f7f;
+            transition: background .1s, color .1s;
+        }
+    
+        .label:hover {
+            background: #d8d8d8;
+        }
+    
+        .label:active {
+            background: #ccc;
+        }
+    
+        .input:focus + .label {
+            box-shadow: inset 0 0 0 3px #2aa1c0;
+            z-index: 1;
+        }
+
+        .input:checked + .label {
+            background: #fff;
+            color: #000;
+        }
+
+        .panel {
+            display: none;
+            padding: 20px 30px 30px;
+            background: #fff;
+        }
+
+        .input:checked + .label + .panel {
+            display: block;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                padding: 60px 10px;
+            }
+            .label {
+                width: auto;
+            }
+            .panel {
+                order: 99;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <input name="tabs" type="radio" id="tab-1" checked="checked" class="input" />
+        <label for="tab-1" class="label">Orange</label>
+        <div class="panel">
+            <h1>Orange</h1>
+            <p>The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the
+                family</p>
+            <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus ×
+                aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through
+                nucellar embryony); varieties of sweet orange arise through mutations.</p>
+        </div>
+        <input type="radio" name="tabs" id="tab-2" class="input">
+        <label for="tab-2" class="label">Tangerine</label>
+        <div class="panel">
+            <h1>Tangerine</h1>
+            <p>The tangerine (Citrus tangerina) is an orange-colored citrus fruit that is closely related to, or
+                possibly a type of, mandarin orange (Citrus reticulata).</p>
+            <p>The name was first used for fruit coming from Tangier, Morocco, described as a mandarin variety. Under
+                the Tanaka classification system, Citrus tangerina is considered a separate species.</p>
+        </div>
+        <input type="radio" name="tabs" id="tab-3" class="input">
+        <label for="tab-3" class="label">Tangerine</label>
+        <div class="panel">
+            <h1>Clemantine</h1>
+            <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in
+                1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be
+                separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+        </div>
+    </div>
+</body>
+
+</html>
