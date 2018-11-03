@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Types of horizontal menus</title>
+    <style>
+        body {
+            font: 18px Calibri, Tahoma, sans-serif;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        nav ul,
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Variant 1 */
+
+        #menu-horiz li {
+            display: inline-block;
+            padding: 3px 15px 3px 0;
+        }
+
+        #menu-horiz a {
+            color: #00f;
+        }
+
+        /* Variant 2 */
+
+        #menu-bg {
+            background-color: #1858be;
+        }
+
+        #menu-bg li {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+            border-right: 1px solid #0c3474;
+            margin-right: -.25em;
+        }
+
+        #menu-bg li:hover {
+            background: #0c3474;
+        }
+
+        /* Variant 3 */
+
+        #menu-hover {
+            background-color: #3ca010;
+        }
+        
+        #menu-hover li {
+            display: inline-block;
+        }
+
+        #menu-hover li a { 
+            display: block;
+            padding: 10px;
+            border-right: 1px solid #1e4e09;
+        }
+
+        #menu-hover li a:hover {
+            background-color: #77dd4a;
+        }
+
+        /* Variant 4 */
+
+        #menu-table {
+            display: table;
+            background: #dd0bc4;
+            width: 100%;
+        }
+
+        #menu-table li {
+            display: table-cell;
+            padding: 10px;
+            border-right: 1px solid #800571;
+            text-align: center;
+        }
+
+        #menu-table li:hover {
+            background: #800571;
+        }
+
+        /* Variant 5 */
+
+        #menu-float {
+            background-color: #f90;
+            overflow: hidden;
+        }
+
+        #menu-float li {
+            float: left;
+            padding: 10px;
+            border-left: 1px solid #f40;
+            text-align: center;
+        }
+
+        #menu-float li:hover {
+            background-color: #f40;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- /* Variant 1 */ -->
+    <nav>
+        <ul id="menu-horiz">
+            <li><a href="">Главная</a></li>
+            <li><a href="">Телефоны</a></li>
+            <li><a href="">Телевизоры</a></li>
+            <li><a href="">Контакты</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+        </ul>
+    </nav>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem saepe nesciunt nisi debitis unde maiores,
+    accusamus rem laudantium iusto voluptatibus delectus, molestiae dicta necessitatibus, distinctio fugiat
+    nostrum? Repudiandae, perspiciatis blanditiis.</p>
+
+    <!-- /* Variant 2 */ -->
+    <nav>
+            <ul id="menu-bg">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Телефоны</a></li>
+                <li><a href="">Телевизоры</a></li>
+                <li><a href="">Контакты</a></li>
+                <li><a href="">Доставка и оплата</a></li>
+            </ul>
+        </nav>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem saepe nesciunt nisi debitis unde maiores,
+        accusamus rem laudantium iusto voluptatibus delectus, molestiae dicta necessitatibus, distinctio fugiat
+        nostrum? Repudiandae, perspiciatis blanditiis.</p>
+
+        <!-- /* Variant 3 */ -->
+    <nav>
+            <ul id="menu-hover">
+                <li><a href="">Главная</a>
+                <li><a href="">Телефоны</a>
+                <li><a href="">Телевизоры</a>
+                <li><a href="">Контакты</a>
+                <li><a href="">Доставка и оплата</a>
+            </ul>
+        </nav>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem saepe nesciunt nisi debitis unde maiores,
+        accusamus rem laudantium iusto voluptatibus delectus, molestiae dicta necessitatibus, distinctio fugiat
+        nostrum? Repudiandae, perspiciatis blanditiis.</p>
+
+         <!-- /* Variant 4 */ -->
+    <nav>
+            <ul id="menu-table">
+                <li><a href="">Главная</a>
+                <li><a href="">Телефоны</a>
+                <li><a href="">Телевизоры</a>
+                <li><a href="">Контакты</a>
+                <li><a href="">Доставка и оплата</a>
+            </ul>
+        </nav>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem saepe nesciunt nisi debitis unde maiores,
+        accusamus rem laudantium iusto voluptatibus delectus, molestiae dicta necessitatibus, distinctio fugiat
+        nostrum? Repudiandae, perspiciatis blanditiis.</p>
+
+         <!-- /* Variant 5 */ -->
+    <nav>
+            <ul id="menu-float">
+                <li><a href="">Главная</a>
+                <li><a href="">Телефоны</a>
+                <li><a href="">Телевизоры</a>
+                <li><a href="">Контакты</a>
+                <li><a href="">Доставка и оплата</a>
+            </ul>
+        </nav>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem saepe nesciunt nisi debitis unde maiores,
+        accusamus rem laudantium iusto voluptatibus delectus, molestiae dicta necessitatibus, distinctio fugiat
+        nostrum? Repudiandae, perspiciatis blanditiis.</p>
+</body>
+
+</html>
