@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Julia-Dubenchuk/template-component#readme",
   "dependencies": {
     "browser-sync": "^2.26.3",
+    "jquery": "^3.3.1",
     "normalize.css": "^8.0.0"
   }
 }

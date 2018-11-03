@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input[type=file]</title>
+</head>
+<style>
+
+    body{
+    font: 14px/1 "Helvetica Neue", "Helvetica", Helvetica,Arial, sans-serif; /* example */
+    }
+
+    /* Средствами CSS «замаскировать» стандартный input[type=file], сделать его полностью прозрачным 
+    и поместить на месте стилизованного фейкового поля, чтобы клик по последнему вызывал клик по стандартному, 
+    и, как следствие, открывал системное окно выбора файла. */
+
+    .variant1,
+    .variant2 {
+        margin-bottom: 24px;
+    }
+
+    .file_upload {
+        position: relative;
+        overflow: hidden;
+        font-size: 1em;
+        height: 2em;
+        line-height: 2em;
+    }
+
+    .file_upload > button {
+        float: right;
+        width: 8em;
+        height: 100%;
+    }
+
+    .file_upload > div {
+        padding-left: 1em;
+    }
+
+    .file_upload.file_upload1 input[type=file] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(20);
+        letter-spacing: 10em;
+        -ms-transform: scale(20);
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .file_upload > div {
+            display: none;
+        }
+
+        .file_upload > button {
+            width: 100%;
+        }
+    }
+
+    /* Поместить прозрачный input[type=file] внутрь элемента label, вместе с произвольными стилизованными 
+    инлайновыми элементами (кроме input, button, select и textarea, разумеется). Клик по label автоматически 
+    приведет к клику и по скрытому полю для выбора файла. */
+
+    .file_upload-label {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        font-size: 1em;
+        height: 2em;
+        line-height: 2em;
+    }
+
+    .file_upload-label .button,
+    .file_upload-label > mark {
+        display: block;
+        cursor: pointer;
+    }
+
+    .file_upload-label .button {
+        float: right;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 8em;
+        height: 100%;
+        text-align: center;
+    }
+
+    .file_upload-label > mark {
+        background: transparent;
+        padding-left: 1em;
+    }
+
+    .file_upload-label input[type=file] {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+
+    /* Использовать имитацию клика по скрытому input[type=file] средствами JavaScript.
+       Внимание, данный способ неприменим для браузера Internet Explorer! Несмотря на то, 
+       что файл выбирается в скрытом input[type=file], при отправке формы значение последнего будет «сброшено».  */
+
+ .file_upload-js{
+    position: relative;
+    overflow: hidden;
+    font-size: 1em;        /* example */
+    height: 2em;           /* example */
+    line-height: 2em       /* the same as height */
+}
+.file_upload-js > button, .file_upload > div{
+    cursor: pointer
+}
+.file_upload-js > button{
+    float: right;
+    width: 8em;            /* example */
+    height: 100%
+}
+.file_upload-js > div{
+    padding-left: 1em      /* example */
+}
+@media only screen and ( max-width: 500px ){  /* example */
+    .file_upload-js > div{
+        display: none
+    }
+    .file_upload-js > button{
+        width: 100%
+    }
+}
+.file_upload-js input[type=file]{
+    position: absolute;
+    top: 0;
+    visibility: hidden
+}
+
+/* Making it beautiful */
+
+.file_upload-js{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.1s linear
+}
+.file_upload-js.focus{
+    box-shadow: 0 0 5px rgba(0,30,255,0.4)
+}
+.file_upload-js > button{
+    background: #7300df;
+    transition: background 0.2s;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    text-shadow: #6200bd 0 -1px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.file_upload-js:hover > button{
+    background: #6200bd;
+    text-shadow: #5d00b3 0 -1px 0
+}
+.file_upload-js:active > button{
+    background: #5d00b3;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset
+}
+
+
+</style>
+
+<body>
+
+    <!-- /* первый способ */ -->
+
+    <div class="variant1">
+        <div class="file_upload file_upload1">
+            <button type="button">Выбрать</button>
+            <div>Файл не выбран</div>
+            <input type="file" />
+        </div>
+    </div>
+
+    <!-- /* второй способ */ -->
+
+    <div class="variant2">
+        <label class="file_upload-label">
+            <span class="button">Выбрать</span>
+            <mark>Файл не выбран</mark>
+            <input type="file" />
+        </label>
+    </div>
+
+    <!-- /* третий способ */ -->
+
+    <!-- <div class="variant3"> -->
+            <div class="file_upload-js">
+                <button type="button">Выбрать</button>
+                <div>Файл не выбран</div>
+                <input type="file" />
+            </div>
+        <!-- </div> -->
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js">
+   $(function(){
+    var wrapper = $( ".file_upload" ),
+        inp = wrapper.find( "input" ),
+        btn = wrapper.find( "button" ),
+        lbl = wrapper.find( "div" );
+
+    // Crutches for the :focus style:
+    btn.focus(function(){
+        wrapper.addClass( "focus" );
+    }).blur(function(){
+        wrapper.removeClass( "focus" );
+    });
+
+    // Yep, it works!
+    btn.add( lbl ).click(function(){
+        inp.click();
+    });
+
+    var file_api = ( window.File && window.FileReader && window.FileList && window.Blob ) ? true : false;
+
+    inp.change(function(){
+
+        var file_name;
+        if( file_api && inp[ 0 ].files[ 0 ] )
+            file_name = inp[ 0 ].files[ 0 ].name;
+        else
+            file_name = inp.val().replace( "C:\\fakepath\\", '' );
+        if( ! file_name.length )
+            return;
+
+        if( lbl.is( ":visible" ) ){
+            lbl.text( file_name );
+            btn.text( "Выбрать" );
+        }else
+            btn.text( file_name );
+    }).change();
+
+});
+$( window ).resize(function(){
+    $( ".file_upload input" ).triggerHandler( "change" );
+});
+</script>
+
+</html>
